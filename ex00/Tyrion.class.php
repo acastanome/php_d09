@@ -12,5 +12,10 @@ Class Tyrion extends Lannister{
     public function getSize() {
         return "Short";
     }
+
+    public function __destruct()
+    {
+        return ;
+    }
 }
 ?>
