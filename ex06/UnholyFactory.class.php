@@ -1,11 +1,11 @@
 <?php
     class UnholyFactory {
 
-        private $recruits = array();
+        private $_recruits = array();
 
         public function absorb($someone)
         {
-            if (array_key_exists($someone->name, $this->recruits))
+            if (array_key_exists($someone->name, $this->_recruits))
             {
                 echo "(Factory already absorbed a fighter of type $someone->name)" . PHP_EOL;
             }
@@ -14,7 +14,7 @@
                 if ($someone instanceof Fighter)
                 {
                     echo "(Factory absorbed a fighter of type $someone->name)" . PHP_EOL;
-                    $this->recruits[$someone->name] = $someone;
+                    $this->_recruits[$someone->name] = $someone;
                 }
                 else
                     echo "(Factory can't absorb this, it's not a fighter)" . PHP_EOL;
@@ -23,10 +23,10 @@
 
         public function fabricate($someone)
         {
-                if (array_key_exists($someone, $this->recruits))
+                if (array_key_exists($someone, $this->_recruits))
                 {
                     echo "(Factory fabricates a fighter of type $someone)" . PHP_EOL;
-                    return clone $this->recruits[$someone];
+                    return clone $this->_recruits[$someone];
                 }
                 else
                 {

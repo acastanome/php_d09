@@ -1,16 +1,16 @@
 <?php
     class NightsWatch {
 
-        private $recruits = array();
+        private $_recruits = array();
 
         public function recruit($someone) {
-            $this->$recruits[] = $someone;
+            $this->$_recruits[] = $someone;
         }
 
         public function fight() {
-            foreach ($this->$recruits as $key => $value)
+            foreach ($this->$_recruits as $key => $value)
             {
-                if ($this->$recruits[$key] instanceof IFighter)
+                if ($this->$_recruits[$key] instanceof IFighter)
                     $value->fight();
             }
         }
